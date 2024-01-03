@@ -1,14 +1,18 @@
+// clique sur les flèches de direction 
 
-document.querySelector(".arrow_left").addEventListener("click" , arrowClick);
-document.querySelector(".arrow_right").addEventListener("click" , arrowClick);
+let flèchesDirectionLeft = document.querySelector(".arrow_left");
 
-function arrowClick() {
-alert("le clique fonctionne !");
+flèchesDirectionLeft.addEventListener("click", function(){
+	console.log("vous avez cliqué sur la flèche gauche")
+});
 
-}
+let flèchesDirectionRight = document.querySelector(".arrow_right");
 
+flèchesDirectionRight.addEventListener("click", function(){
+	console.log("vous avez cliqué sur la flèche droite")
+});
 
-
+//carrousel
 const slides = [
 
 	{
@@ -29,4 +33,7 @@ const slides = [
 	}
 
 ]
+
+//points de carrousel
+
 
