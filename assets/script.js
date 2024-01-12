@@ -23,14 +23,13 @@ let leftArrow = document.querySelector(".arrow_left");
 let rightArrow = document.querySelector(".arrow_right");
 
 leftArrow.addEventListener("click", function () {
-	console.log("A gauche");
-
+	console.log(slides);
 });
 
 
 
 rightArrow.addEventListener ("click", function () {
-	console.log("A droite");
+	console.log(slides);
 });
 
 
@@ -52,16 +51,15 @@ for (let i = 0; i < slides.length; i++) {
 
 	let slide = slides[i];
 
-	if (i <= slides.length) {
+	if (i <= slides.length[0]) {
 
 		let img = document.querySelector(".banner-img");
-
 		img.setAttribute("src", "./assets/images/slideshow/slide1.jpg");
 		i++;
 
 
 	}
-	if (i <= slides.length) {
+	if (i <= slides.length[1]) {
 		let img = document.querySelector(".banner-img");
 		img.setAttribute("src", "./assets/images/slideshow/slide2.jpg");
 		i++;
@@ -70,7 +68,7 @@ for (let i = 0; i < slides.length; i++) {
 
 
 	}
-	if (i <= slides.length) {
+	if (i <= slides.length[2]) {
 		let img = document.querySelector(".banner-img");
 		img.setAttribute("src", "./assets/images/slideshow/slide3.jpg");
 		i++;
@@ -81,7 +79,6 @@ for (let i = 0; i < slides.length; i++) {
 	if (i === slides.length[3]) {
 		let img = document.querySelector(".banner-img");
 		img.setAttribute("src", "./assets/images/slideshow/slide4.jpg");
-
 
 	}
 }
