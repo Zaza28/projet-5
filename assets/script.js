@@ -17,105 +17,69 @@ const slides = [
 		"tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-
 const banner = document.getElementById("banner");
 let leftArrow = document.querySelector(".arrow_left");
 let rightArrow = document.querySelector(".arrow_right");
+let index = 0;
 
 leftArrow.addEventListener("click", function () {
-	console.log(slides);
+	index--;
+	if (index === -1) {
+		index = 3;
+		
+
+	}
+	console.log(slides[index]);
+	tagLine.innerHTML = slides[index].tagLine;
+	image.setAttribute("src", "./assets/images/slideshow/" + slides[index].image);
+	indexParent.children[index].classList.add("dot_selected");
+
+
 });
 
+rightArrow.addEventListener("click", function () {
+	index = index + 1;
+	console.log(slides[index])
+	if (index === 4) {
+		index = 0;
+	}
+	indexParent.children[index].classList.add("dot_selected");
+	tagLine.innerHTML = slides[index].tagLine;
+	image.setAttribute("src", "./assets/images/slideshow/" + slides[index].image);
 
-
-rightArrow.addEventListener ("click", function () {
-	console.log(slides);
 });
 
-
+const dotsSelected = document.querySelectorAll(".dot")
+const tagLine = document.querySelector('#banner p');
+const image = document.querySelector('.banner-img');
+const indexParent = document.querySelector("#banner .dots ")
 
 function addSpan() {
-
 	document.querySelector(".dots").innerHTML += "<span class='dot'></span>";
 	document.querySelector(".dots").innerHTML += "<span class='dot'></span>";
 	document.querySelector(".dots").innerHTML += "<span class='dot'></span>";
 	document.querySelector(".dots").innerHTML += "<span class='dot'></span>";
 
+	const listdot = document.querySelectorAll(".dot")
+	console.log(listdot);
+
+	listdot.forEach((element, i) => {
+
+		element.addEventListener("click", () => { 
+			index = i;
+			element.classList.add("dot_selected");
+			image.setAttribute("src", "./assets/images/slideshow/" + slides[i].image);
+			tagLine.innerHTML = slides[i].tagLine;
+
+		});
+		// element.classList.remove("dot_selected");
+
+
+
+
+	});
 }
+
 addSpan();
-document.querySelector(".dot").classList.add("dot_selected");
-
-let Index = 0;
-
-for (let i = 0; i < slides.length; i++) {
-
-	let slide = slides[i];
-
-	if (i <= slides.length[0]) {
-
-		let img = document.querySelector(".banner-img");
-		img.setAttribute("src", "./assets/images/slideshow/slide1.jpg");
-		i++;
-
-
-	}
-	if (i <= slides.length[1]) {
-		let img = document.querySelector(".banner-img");
-		img.setAttribute("src", "./assets/images/slideshow/slide2.jpg");
-		i++;
-
-
-
-
-	}
-	if (i <= slides.length[2]) {
-		let img = document.querySelector(".banner-img");
-		img.setAttribute("src", "./assets/images/slideshow/slide3.jpg");
-		i++;
-
-
-	}
-
-	if (i === slides.length[3]) {
-		let img = document.querySelector(".banner-img");
-		img.setAttribute("src", "./assets/images/slideshow/slide4.jpg");
-
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
