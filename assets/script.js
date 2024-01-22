@@ -34,8 +34,7 @@ leftArrow.addEventListener("click", function () {
 });
 
 rightArrow.addEventListener("click", function () {
-  index = index + 1;
-  console.log(slides[index]);
+  index++;
   if (index === slides.length) {
     index = 0;
   }
