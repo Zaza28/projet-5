@@ -59,9 +59,11 @@ function addSpan() {
 addSpan();
 
 function displaySlide(newIndex) {
-
   tagLine.innerHTML = slides[newIndex].tagLine;
-  image.setAttribute( "src", "./assets/images/slideshow/" + slides[newIndex].image );
+  image.setAttribute(
+    "src",
+    "./assets/images/slideshow/" + slides[newIndex].image
+  );
   indexParent.children[newIndex].classList.add("dot_selected");
 
   Array.from(indexParent.children).forEach((element, i) => {
@@ -71,7 +73,6 @@ function displaySlide(newIndex) {
       element.classList.remove("dot_selected");
     }
   });
-
 }
 
 displaySlide(0);
